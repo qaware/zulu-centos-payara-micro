@@ -1,5 +1,7 @@
 FROM azul/zulu-openjdk-centos:8u162
 
+LABEL maintainer="qaware-oss@qaware.de"
+
 ENV PAYARA_PATH /opt/payara
 
 RUN yum -q -y install wget && \
