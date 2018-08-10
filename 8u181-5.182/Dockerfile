@@ -6,12 +6,12 @@ ENV PAYARA_PATH /opt/payara
 
 RUN yum -q -y install curl && \
  update-ca-trust && \
+ useradd -d $PAYARA_PATH payara && echo payara:0 | chpasswd && \
  mkdir -p $PAYARA_PATH/deployments && \
  mkdir -p $PAYARA_PATH/libs && \
- useradd -d $PAYARA_PATH payara && echo payara:0 | chpasswd && \
  chown -R payara:0 $PAYARA_PATH && \
  echo "export PS1='> '" >> /etc/bash.bashrc && \
- echo "alias ll='ls -al'" >> /etc/bash.bashrc && \
+ echo "alias ll='ls -al'" >> /etc/bash.bashrc
 
 ENV PAYARA_PKG https://search.maven.org/remotecontent?filepath=fish/payara/extras/payara-micro/5.182/payara-micro-5.182.jar
 ENV PAYARA_VERSION 182
@@ -27,7 +27,7 @@ ENV AUTODEPLOY_DIR $PAYARA_PATH/deployments
 ENV PAYARA_MICRO_JAR=$PAYARA_PATH/$PKG_FILE_NAME
 
 # Default payara ports to expose
-EXPOSE 8080 8181 8443 6900
+EXPOSE 8080 8443 6900
 
 ENTRYPOINT ["java", "-server", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-XX:MaxRAMFraction=3", "-XX:ThreadStackSize=256", "-XX:MaxMetaspaceSize=128m", "-XX:+UseG1GC", "-XX:ParallelGCThreads=2", "-XX:CICompilerCount=2", "-XX:+UseStringDeduplication", "-jar", "/opt/payara/payara-micro.jar"]
 CMD ["--deploymentDir", "/opt/payara/deployments"]
