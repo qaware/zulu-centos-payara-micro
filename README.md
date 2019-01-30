@@ -8,4 +8,4 @@ M.-Leander Reimer (@lreimer), <mario-leander.reimer@qaware.de>
 
 # License
 
-This software is provided under the Apache v2 open source license, read the `LICENSE` file for details.
+This software is provided under the Apache License, Version 2.0, read the `LICENSE` file for details.
