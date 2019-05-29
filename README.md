@@ -4,7 +4,7 @@ Custom Docker images that combine Zulu OpenJDK on CoreOS with Payara Micro. The 
 
 All the images are tuned for Docker usage, especially concerning the CPU, RAM and thus JVM heap usage.
 ```
-docker run -it --rm --cpus 1 --memory 640m qaware/zulu-centos-payara-micro:8u212-5.191
+docker run -it --rm --cpus 1 --memory 640m qaware/zulu-centos-payara-micro:8u212-5.192
 ```
 
 # Maintainer
