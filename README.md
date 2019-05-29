@@ -7,6 +7,10 @@ All the images are tuned for Docker usage, especially concerning the CPU, RAM an
 docker run -it --rm --cpus 1 --memory 640m qaware/zulu-centos-payara-micro:8u212-5.192
 ```
 
+For more information about Payara Server and Payara Micro have a look at the documentation: https://payara.gitbooks.io/payara-server/content/
+
+For more information and detaials about the individual release versions have a look at the release notes as well as the Github releases pages: https://github.com/payara/Payara/releases
+
 # Maintainer
 
 M.-Leander Reimer (@lreimer), <mario-leander.reimer@qaware.de>
